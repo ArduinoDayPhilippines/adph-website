@@ -1,0 +1,247 @@
+[
+  {
+    "name": "Association of Computer Engineering Students",
+    "path_to_image": "/images/logos/ACpES logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "AWSCC Haribon",
+    "path_to_image": "/images/logos/AWS_CC_Haribon.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "AWSCC-PUP",
+    "path_to_image": "/images/logos/AWS_CC_PUP.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "AWSCC CVSU",
+    "path_to_image": "/images/logos/AWS_CVSU.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "Blaze Team Elizabeth Seton School",
+    "path_to_image": "/images/logos/blaze_logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "CCITSC",
+    "path_to_image": "/images/logos/CCITSC_Logo.PNG",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "CISCO NETCONNECT PUP",
+    "path_to_image": "/images/logos/CISCO NETCONNECT PUP LOGO.png",
+    "radius": 100,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "CoESS - UE Caloocan",
+    "path_to_image": "/images/logos/coess_logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "CpEO FEU Tech",
+    "path_to_image": "/images/logos/CpEO_FIT_Logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "DevCon Kids",
+    "path_to_image": "/images/logos/devcon_kids.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "EUCPESS-ICpEP.SE",
+    "path_to_image": "/images/logos/EUCPESS-ICpEP logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "FEATI Computer Society",
+    "path_to_image": "/images/logos/FEATI Computer Society Logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "GDG On Campus - DLSU",
+    "path_to_image": "/images/logos/GDG On Campus_Template.png",
+    "radius": 0,
+    "width": 200,
+    "height": 200
+  },
+  {
+    "name": "GDG On Campus - Mapua Manila",
+    "path_to_image": "/images/logos/GDGoC Mapua Manila Logo.jpg",
+    "radius": 100,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "IBITS",
+    "path_to_image": "/images/logos/IBITS.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "ICpEP.SE MAKATI",
+    "path_to_image": "/images/logos/ICpEP_MAKATI.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "ICpEP.SE NCST",
+    "path_to_image": "/images/logos/icpep_ncst.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "ICpEP PH Student Edition",
+    "path_to_image": "/images/logos/ICpEP_PH_STUDENT.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "ICpEP Philippines",
+    "path_to_image": "/images/logos/ICpEP_PH.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "ICpEP.SE NUD Dasmarinas",
+    "path_to_image": "/images/logos/ICpEP_SE_NUD_LOGO.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "ICpEP.SE CDMC",
+    "path_to_image": "/images/logos/ICPEPse_CDMC_COLORED.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "IECEP Cavite",
+    "path_to_image": "/images/logos/IECEP_Cavite.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "IECEP MSEUF",
+    "path_to_image": "/images/logos/iecep-mseuf.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "IGNITE WHITE",
+    "path_to_image": "/images/logos/IGNITE WHITE.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "ISC PUP Sto. Tomas",
+    "path_to_image": "/images/logos/ISC Logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "JPCS APC",
+    "path_to_image": "/images/logos/JPCS-APC.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "KakaComputer",
+    "path_to_image": "/images/logos/kaka-computer.png",
+    "radius": 0,
+    "width": 150,
+    "height": 150
+  },
+  {
+    "name": "MRSP PUPSS",
+    "path_to_image": "/images/logos/mrsp_pupse.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "MSC - PLM",
+    "path_to_image": "/images/logos/MSC - PLM Logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "PUP TPG",
+    "path_to_image": "/images/logos/PUP TPG Logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "PUP Hygears",
+    "path_to_image": "/images/logos/pup_hygears.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "SAKTO STC-B",
+    "path_to_image": "/images/logos/SAKTO_STC-B_Logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "Shiftsolv3D",
+    "path_to_image": "/images/logos/shiftsolved-dark.png",
+    "radius": 0,
+    "width": 200,
+    "height": 200
+  },
+  {
+    "name": "TechStart TV",
+    "path_to_image": "/images/logos/TechStart_TV_text_logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  },
+  {
+    "name": "Young Founders Summit PH",
+    "path_to_image": "/images/logos/yfs.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120
+  }
+]
