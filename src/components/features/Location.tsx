@@ -1,34 +1,40 @@
 import React from "react";
+
 const Location = () => {
+	const venueName = "Asia Pacific College";
+	const mapQuery = encodeURIComponent("Asia Pacific College, Makati, Metro Manila, Philippines");
+	const mapSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+
 	return (
-		<div className="container grid grid-cols-1 items-center gap-6 md:gap-12 md:grid-cols-2 justify-between w-full">
+		<div className="container grid w-full grid-cols-1 items-center justify-between gap-6 md:grid-cols-2 md:gap-12">
 			<div className="text-center md:text-left">
 				<h2>
-					<span className="text-secondary">191</span> total events around the
-					world only <span className="text-secondary">1</span> in the
-					Philippines.
+					Venue is at <span className="text-secondary">{venueName}</span>
 				</h2>
 				<p className="mt-3 md:text-xl">
-					Join us in this annual technology event.
+					Join us at {venueName}. Full address details and onsite logistics will be shared closer to the event.
 				</p>
 			</div>
-			<div>
-				<iframe
-					title="STI College Cubao Map"
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.6958210270936!2d121.05148187582098!3d14.61639597668832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7c19c3b5f3b%3A0xbf690aabaf3313d2!2sSTI%20College%20Cubao!5e0!3m2!1sen!2sph!4v1741893810604!5m2!1sen!2sph" 
-					className="rounded-3xl w-full h-[350px] md:h-[400px]"
-					allowFullScreen
-					loading="lazy"
-					referrerPolicy="no-referrer-when-downgrade"
-				></iframe>
-				<noscript>
-					<p>
-						Google Maps is not available. Please enable JavaScript to view the
-						map.
-					</p>
-				</noscript>
+			<div className="rounded-3xl border border-white/10 bg-[#0d0f17] px-6 py-10 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+				<div className="flex flex-col items-center gap-3 text-center">
+					<p className="text-xs uppercase tracking-[0.22em] text-white/60">Location</p>
+					<p className="text-2xl font-semibold">{venueName}</p>
+					<p className="text-sm text-white/70 md:text-base">Makati, Metro Manila, Philippines</p>
+					<div className="mt-4 w-full overflow-hidden rounded-2xl border border-white/10">
+						<div className="aspect-[16/10] w-full">
+							<iframe
+								title={`${venueName} map`}
+								src={mapSrc}
+								className="h-full w-full"
+								loading="lazy"
+								referrerPolicy="no-referrer-when-downgrade"
+							/>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
 };
+
 export default Location;

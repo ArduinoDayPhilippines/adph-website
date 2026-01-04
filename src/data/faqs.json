@@ -1,35 +1,34 @@
 [
   {
     "question": "What is Arduino Day Philippines?",
-    "answer": "Arduino Day is a global celebration of Arduino’s birthday, bringing together makers, engineers, and technology enthusiasts from around the world. It serves as a platform for participants to share knowledge, develop new skills, and explore the endless possibilities of the open-source Arduino community."
+    "answer": "Arduino Day is a global celebration of Arduino's birthday, bringing together makers, engineers, and technology enthusiasts. The Philippines chapter is a community-led gathering focused on sharing builds, ideas, and open-source learnings."
   },
   {
-    "question": "Where and when will Arduino Day Philippines 2025 be held?",
-    "answer": "Arduino Day Philippines 2025 will be held at the STI College Cubao on March 22, 2025. We look forward to seeing you there!"
-
+    "question": "When and where is the event?",
+    "answer": "The exact date is coming soon. We will announce the confirmed schedule and place on our social channels and mailing list."
   },
   {
-    "question": "Will there be a registration fee for the event and are walk-ins allowed?",
-    "answer": "No, Arduino Day Philippines 2025 is completely free of charge. Registration will open soon through our official social media pages. While there is no registration fee, walk-ins are strongly discouraged. We encourage everyone to register in advance so we can better prepare and ensure a smooth event experience."
+    "question": "How do I register and is it free?",
+    "answer": "Registration will open soon and the event will be free to attend. Pre-registration is required so we can manage capacity; walk-ins will be limited based on available seats."
   },
   {
-    "question": "What initiatives can I participate in during Arduino Day Philippines 2025?",
-    "answer": "Arduino Day Philippines 2025 will feature technical talks and booth exhibits, providing a platform for knowledge sharing and innovation. Speakers will have the opportunity to present their expertise through two distinct formats: the Main Segment, which consists of 25-minute technical presentations focused on in-depth discussions, and the Circuit Sprint Segment, which consists of 15-minute presentations designed for concise yet impactful knowledge sharing. Additionally, individuals with innovative Arduino-based projects will have the opportunity to showcase their work through a dedicated exhibit"
+    "question": "What can I expect in the program?",
+    "answer": "Expect community talks, demos, and booths. We are finalizing the lineup, agenda, and any build sprints or challenges. Details will be posted once confirmed."
   },
   {
-    "question": "Can I still apply as a speaker or showcase my project in an exhibit?",
-    "answer": "Yes, applications are still open. Speaker applications will be accepted until March 5, 2025, while project booth proposals will be open until March 8, 2025. Currently, the ADPH 2025 program committee is currently reviewing and deliberating on submitted proposals to align the event’s program. We encourage you to submit your proposal as soon as possible."
+    "question": "Can I speak or showcase a project?",
+    "answer": "We will open a call for speakers and project exhibits soon. Keep an eye on announcements to submit your topic or project when the forms go live."
   },
   {
-    "question": " How do I become a partner for Arduino Day Philippines 2025?",
-    "answer": "Community and media partnerships for Arduino Day Philippines 2025 are still open. Interested organizations can apply through our partnership forms found on our social media pages. For inquiries about tasks and delegations as a community or media partner, you may reach out through Facebook social media page."
+    "question": "How do I become a partner?",
+    "answer": "Community and media partnership slots are opening shortly. If you want to collaborate, reach out via our social pages or email us at arduinodayph@gmail.com."
   },
   {
-    "question": "How can I support the event in other ways?",
-    "answer": "If you would like to support the event, you can coordinate with us through our sponsorship forms, make an inquiry through our Facebook social media page or email us through arduinodayph@gmail.com. Your contributions will help make Arduino Day Philippines 2025 a successful and innovative event."
+    "question": "How else can I support the event?",
+    "answer": "Sponsorship and in-kind support are welcome. Message us through our social channels or email arduinodayph@gmail.com and we will share the sponsorship deck once ready."
   },
   {
-    "question": "Is Arduino Day open to other initiatives?",
-    "answer": "At the moment, the focus is on delivering Arduino Day Philippines 2025. However, for future initiatives such as specialized events, seminars and other activities, you may reach out to us through our social media pages or email us at arduinodayph@gmail.com for further discussions."
+    "question": "Will there be online streaming?",
+    "answer": "We are exploring a hybrid setup. If streaming is available, we will post links alongside the final schedule."
   }
 ]

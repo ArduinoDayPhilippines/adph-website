@@ -3,8 +3,9 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<footer className="container mt-20 md:px-8">
-			<div className="flex flex-col md:flex-row md:px-8 justify-between mx-auto border-b border-gray-800 py-6">
+		<footer className="mt-20 border-t border-white/10">
+			<div className="container md:px-8">
+				<div className="flex flex-col md:flex-row md:px-8 justify-between mx-auto border-b border-gray-800 py-6">
 				<div className="mb-6 md:mb-0">
 					<div className="flex gap-4 items-center text-nowrap mb-4">
 						<span>
@@ -161,9 +162,10 @@ const Footer = () => {
 						</ul>
 					</div>
 				</div>
-			</div>
-			<div className="flex justify-center items-center text-sm md:text-base py-8 text-gray-400">
-				<p>© 2025 Arduino Day Philippines. All rights reserved.</p>
+				</div>
+				<div className="flex justify-center items-center text-sm md:text-base py-8 text-gray-400">
+					<p>© 2026 Arduino Day Philippines. All rights reserved.</p>
+				</div>
 			</div>
 		</footer>
 	);

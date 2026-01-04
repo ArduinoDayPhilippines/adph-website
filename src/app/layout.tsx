@@ -8,8 +8,8 @@ const montserrat = Montserrat({
 	weight: ["400", "500", "600", "700"],
 });
 export const metadata: Metadata = {
-	title: "Arduino Day Philippines 2025",
-	description: "The Official Website of Arduino Day Philippines 2025.",
+	title: "Arduino Day Philippines 2026",
+	description: "The Official Website of Arduino Day Philippines 2026.",
 };
 
 export default function RootLayout({
@@ -18,8 +18,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${montserrat.variable}antialiased`}>{children}</body>
+		<html lang="en" className="overflow-x-hidden">
+			<body className={`${montserrat.variable} antialiased min-h-screen overflow-x-hidden`}>
+				{children}
+			</body>
 		</html>
 	);
 }

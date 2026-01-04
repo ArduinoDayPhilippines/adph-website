@@ -23,7 +23,7 @@ const Partners = () => {
   }
 
   return (
-    <div className="py-16 bg-white">
+    <div className="py-16">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-12 font-morganite">
           Special Thanks To Our{' '}
