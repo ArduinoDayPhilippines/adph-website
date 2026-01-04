@@ -164,7 +164,7 @@ const Footer = () => {
 				</div>
 				</div>
 				<div className="flex justify-center items-center text-sm md:text-base py-8 text-gray-400">
-					<p>© 2025 Arduino Day Philippines. All rights reserved.</p>
+					<p>© 2026 Arduino Day Philippines. All rights reserved.</p>
 				</div>
 			</div>
 		</footer>
