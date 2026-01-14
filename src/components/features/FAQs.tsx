@@ -17,7 +17,7 @@ export default function FAQ() {
   const column2 = faqs.slice(half);
 
   return (
-    <div className="relative container w-full">
+    <div className="container">
       <h2 className="mb-8 h2 text-white">Frequently Asked Questions</h2>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <Accordion faqs={column1} startIndex={0} openIndex={openIndex} toggleAccordion={toggleAccordion} />

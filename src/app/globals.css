@@ -53,6 +53,10 @@
 			100% 100%;
 		position: relative;
 	}
+	body {
+		@apply overflow-x-hidden;
+	}
+
 	/* Section Headings */
 	h2 {
 		@apply font-morganite text-3xl font-bold leading-none sm:text-5xl;
@@ -67,8 +71,7 @@
 	}
 
 	.container {
-		@apply px-5 pt-20 md:max-w-md mx-auto;
-
+		@apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
 	}
 
 	.border-gradient-primary::before {

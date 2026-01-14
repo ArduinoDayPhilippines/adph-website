@@ -24,7 +24,7 @@ const Partners = () => {
 
   return (
     <div className="py-16">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container">
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-12 font-morganite">
           Special Thanks To Our{' '}
           <GlowingTextOrange className="font-bold">
@@ -38,6 +38,9 @@ const Partners = () => {
             <div 
               key={index}
               className="relative flex justify-center items-center p-3 transition-transform duration-300 transform group hover:scale-105"
+              style={{
+                minHeight: `${getAdjustedSize(sponsor.height)}px`,
+              }}
             >
               {/* Gradient border on hover */}
               <div
@@ -53,25 +56,31 @@ const Partners = () => {
                 <div className="w-full h-full bg-[#0f0f0f] rounded-2xl" />
               </div>
 
-    
-              <Image
-                src={sponsor.path_to_image}
-                alt={sponsor.name}
-                width={getAdjustedSize(sponsor.width)}
-                height={getAdjustedSize(sponsor.height)}
-                className={`z-10 object-contain ${
-                  sponsor.radius ? 'rounded-full' : ''
-                } group-hover:hidden transition-opacity duration-300`}
-              />
+              {/* Logo Container - maintains size */}
+              <div 
+                className="absolute inset-0 flex items-center justify-center p-3"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                }}
+              >
+                <Image
+                  src={sponsor.path_to_image}
+                  alt={sponsor.name}
+                  width={getAdjustedSize(sponsor.width)}
+                  height={getAdjustedSize(sponsor.height)}
+                  className={`z-10 object-contain group-hover:opacity-0 transition-opacity duration-300 ${
+                    sponsor.radius ? 'rounded-full' : ''
+                  }`}
+                />
+              </div>
 
-      
+              {/* Text overlay - same position */}
               <div
-                className={`
-                  z-10 hidden group-hover:flex 
-                  text-white text-xl font-semibold text-center 
-                  items-center justify-center
-                  font-morganite h-[${getAdjustedSize(sponsor.height)}px]
-                `}
+                className="absolute inset-0 z-10 flex opacity-0 group-hover:opacity-100 
+                  text-white text-sm sm:text-base lg:text-xl font-semibold text-center 
+                  items-center justify-center px-2
+                  font-morganite transition-opacity duration-300"
               >
                 {sponsor.name}
               </div>

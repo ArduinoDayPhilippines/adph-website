@@ -11,8 +11,8 @@ import Reveal from "@/components/ui/reveal";
 
 export default function Home() {
 	return (
-		<div className="relative min-h-screen overflow-x-hidden">
-			<div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+		<div className="relative min-h-screen">
+			<div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
 				<div className="orange-blur absolute -left-8 top-[10vh] h-[140px] w-[200px] rounded-full md:left-[-5%] md:top-[12vh] md:h-[320px] md:w-[320px]" />
 				<div className="yellow-blur absolute left-4 top-[28vh] h-[120px] w-[190px] rounded-full md:left-16 md:top-[32vh] md:h-[260px] md:w-[320px]" />
 				<div className="blue-blur absolute left-10 top-[52vh] h-[150px] w-[190px] rounded-full md:left-56 md:top-[58vh] md:h-[280px] md:w-[240px]" />
@@ -26,7 +26,7 @@ export default function Home() {
 				<div className="blue-blur absolute left-1/2 top-[210vh] h-[150px] w-[190px] -translate-x-1/2 rounded-full md:top-[235vh] md:h-[280px] md:w-[240px]" />
 			</div>
 
-			<main className="relative z-10 pt-20">
+			<main className="relative z-10">
 				<Navbar />
 				<Hero />
 				<Reveal>

@@ -57,7 +57,7 @@ export default function Navbar() {
 
 	return (
 		<header className="fixed inset-x-0 top-0 z-50 w-full">
-			<div className="mx-auto w-full max-w-6xl px-4 py-3">
+			<div className="mx-auto w-full max-w-7xl px-4 py-3">
 				<nav
 					className="rounded-full border border-white/10 bg-black/70 backdrop-blur"
 					aria-label="Primary navigation"

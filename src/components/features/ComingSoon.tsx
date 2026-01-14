@@ -18,10 +18,10 @@ const ComingSoon = ({
 	className,
 }: ComingSoonProps) => {
 	return (
-		<div className="relative px-4">
+		<div className="container">
 			<div
 				className={cn(
-					"relative isolate mx-auto w-full max-w-6xl overflow-hidden rounded-3xl px-6 py-14 shadow-[0_20px_80px_rgba(0,0,0,0.35)] lg:px-12 lg:py-16",
+					"relative isolate mx-auto w-full max-w-7xl overflow-hidden rounded-3xl px-6 py-14 shadow-[0_20px_80px_rgba(0,0,0,0.35)] lg:px-12 lg:py-16",
 					className
 				)}
 			>
