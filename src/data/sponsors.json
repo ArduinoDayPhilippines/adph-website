@@ -1,7 +1,8 @@
 [
   {
-    "name": "Circuit Rocks",
+    "name": "CircuitRocks",
     "path_to_image": "/images/logos/circuitrocks.png",
+    "website": "https://circuit.rocks/?gad_campaignid=22840677038",
     "radius": 0,
     "width": 120,
     "height": 120,

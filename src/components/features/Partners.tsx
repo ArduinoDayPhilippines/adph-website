@@ -38,30 +38,61 @@ const Partners = () => {
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8">
             {keystoneSponsors.map((sponsor, index) => (
-              <div
-                key={index}
-                className="group relative flex items-center justify-center rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.06] sm:p-6 lg:p-8"
-              >
-                {/* Glow effect on hover */}
-                <div className="pointer-events-none absolute inset-0 rounded-2xl bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              sponsor.website ? (
+                <a
+                  key={index}
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.06] sm:p-6 lg:p-8"
+                  aria-label={`Visit ${sponsor.name}`}
+                >
+                  {/* Glow effect on hover */}
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div className="relative h-16 w-24 sm:h-20 sm:w-32 lg:h-24 lg:w-36">
-                  <Image
-                    src={sponsor.path_to_image}
-                    alt={sponsor.name}
-                    fill
-                    sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
-                    className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                      sponsor.radius ? 'rounded-full' : ''
-                    }`}
-                  />
-                </div>
+                  <div className="relative h-16 w-24 sm:h-20 sm:w-32 lg:h-24 lg:w-36">
+                    <Image
+                      src={sponsor.path_to_image}
+                      alt={sponsor.name}
+                      fill
+                      sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
+                        sponsor.radius ? 'rounded-full' : ''
+                      }`}
+                    />
+                  </div>
 
-                {/* Name tooltip on hover */}
-                <div className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-3 py-1 text-xs text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat">
-                  {sponsor.name}
+                  {/* Name tooltip on hover */}
+                  <div className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-3 py-1 text-xs text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat">
+                    {sponsor.name}
+                  </div>
+                </a>
+              ) : (
+                <div
+                  key={index}
+                  className="group relative flex items-center justify-center rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.06] sm:p-6 lg:p-8"
+                >
+                  {/* Glow effect on hover */}
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                  <div className="relative h-16 w-24 sm:h-20 sm:w-32 lg:h-24 lg:w-36">
+                    <Image
+                      src={sponsor.path_to_image}
+                      alt={sponsor.name}
+                      fill
+                      sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
+                        sponsor.radius ? 'rounded-full' : ''
+                      }`}
+                    />
+                  </div>
+
+                  {/* Name tooltip on hover */}
+                  <div className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-3 py-1 text-xs text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat">
+                    {sponsor.name}
+                  </div>
                 </div>
-              </div>
+              )
             ))}
           </div>
         </div>
@@ -78,27 +109,55 @@ const Partners = () => {
 
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-6 lg:gap-5">
             {communityPartners.map((sponsor, index) => (
-              <div
-                key={index}
-                className="group relative flex items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-secondary/20 hover:bg-white/[0.05] sm:p-4"
-              >
-                <div className="relative h-10 w-full sm:h-14 md:h-16">
-                  <Image
-                    src={sponsor.path_to_image}
-                    alt={sponsor.name}
-                    fill
-                    sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
-                    className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                      sponsor.radius ? 'rounded-full' : ''
-                    }`}
-                  />
-                </div>
+              sponsor.website ? (
+                <a
+                  key={index}
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-secondary/20 hover:bg-white/[0.05] sm:p-4"
+                  aria-label={`Visit ${sponsor.name}`}
+                >
+                  <div className="relative h-10 w-full sm:h-14 md:h-16">
+                    <Image
+                      src={sponsor.path_to_image}
+                      alt={sponsor.name}
+                      fill
+                      sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
+                        sponsor.radius ? 'rounded-full' : ''
+                      }`}
+                    />
+                  </div>
 
-                {/* Name tooltip on hover */}
-                <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
-                  {sponsor.name}
+                  {/* Name tooltip on hover */}
+                  <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
+                    {sponsor.name}
+                  </div>
+                </a>
+              ) : (
+                <div
+                  key={index}
+                  className="group relative flex items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-secondary/20 hover:bg-white/[0.05] sm:p-4"
+                >
+                  <div className="relative h-10 w-full sm:h-14 md:h-16">
+                    <Image
+                      src={sponsor.path_to_image}
+                      alt={sponsor.name}
+                      fill
+                      sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
+                        sponsor.radius ? 'rounded-full' : ''
+                      }`}
+                    />
+                  </div>
+
+                  {/* Name tooltip on hover */}
+                  <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
+                    {sponsor.name}
+                  </div>
                 </div>
-              </div>
+              )
             ))}
           </div>
         </div>
