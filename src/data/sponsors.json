@@ -56,7 +56,7 @@
     "height": 120,
     "tier": "gold"
   },
-    {
+  {
     "name": "iCORE",
     "path_to_image": "/images/logos/ICOREE.png",
     "radius": 0,
@@ -338,7 +338,7 @@
   },
   {
     "name": "ICPEP SE-PUP Manila",
-    "path_to_image": "",
+    "path_to_image": "/images/logos/ICPEP-logo.png",
     "radius": 0,
     "width": 120,
     "height": 120,
@@ -410,7 +410,7 @@
   },
   {
     "name": "Association of Computer Engineering Students (STI-Ortigas Cainta)",
-      "path_to_image": "/images/logos/ACES_LOGO.png",
+    "path_to_image": "/images/logos/ACES_LOGO.png",
     "radius": 0,
     "width": 120,
     "height": 120,
@@ -487,5 +487,13 @@
     "width": 120,
     "height": 120,
     "tier": "community"
+  },
+  {
+    "name": "Institute of Computer Engineers of the Philippines - Asia Pacific College",
+    "path_to_image": "/images/logos/ICPEPAPC.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "venue"
   }
 ]
