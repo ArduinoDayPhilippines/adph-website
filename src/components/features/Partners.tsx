@@ -14,6 +14,9 @@ const Partners = () => {
   const communityPartners = sponsors.filter(
     (s: { tier?: string }) => s.tier === 'community'
   )
+  const venuePartners = sponsors.filter(
+    (s: { tier?: string }) => s.tier === 'venue'
+  )
   const mediaPartners = sponsors.filter(
     (s: { tier?: string }) => s.tier === 'media'
   )
@@ -31,6 +34,66 @@ const Partners = () => {
         <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-white/50 font-montserrat sm:mb-16 sm:text-base">
           The organizations and communities that make this event possible.
         </p>
+
+        {/* Venue Partner */}
+        {venuePartners.length > 0 && (
+          <div className="mb-14 sm:mb-20">
+            <div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-emerald-400/20" />
+              <span className="whitespace-nowrap rounded-full border border-emerald-400/20 bg-emerald-400/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300 font-montserrat">
+                Venue Partner
+              </span>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-emerald-400/20" />
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 lg:gap-6">
+              {venuePartners.map((sponsor, index) =>
+                sponsor.website ? (
+                  <a
+                    key={index}
+                    href={sponsor.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex w-[200px] items-center justify-center rounded-xl border border-white/[0.05] bg-white/[0.025] p-4 backdrop-blur-sm transition-all duration-300 hover:border-emerald-400/30 hover:bg-white/[0.06] sm:w-[220px] sm:p-5"
+                    aria-label={`Visit ${sponsor.name}`}
+                  >
+                    <div className="relative h-12 w-full sm:h-14 md:h-16">
+                      <Image
+                        src={sponsor.path_to_image}
+                        alt={sponsor.name}
+                        fill
+                        sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
+                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                          }`}
+                      />
+                    </div>
+                    <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
+                      {sponsor.name}
+                    </div>
+                  </a>
+                ) : (
+                  <div
+                    key={index}
+                    className="group relative flex w-[200px] items-center justify-center rounded-xl border border-white/[0.05] bg-white/[0.025] p-4 backdrop-blur-sm transition-all duration-300 hover:border-emerald-400/30 hover:bg-white/[0.06] sm:w-[220px] sm:p-5"
+                  >
+                    <div className="relative h-12 w-full sm:h-14 md:h-16">
+                      <Image
+                        src={sponsor.path_to_image}
+                        alt={sponsor.name}
+                        fill
+                        sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
+                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                          }`}
+                      />
+                    </div>
+                    <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
+                      {sponsor.name}
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Keystone Sponsors */}
         <div className="mb-14 sm:mb-20">
@@ -62,9 +125,8 @@ const Partners = () => {
                       alt={sponsor.name}
                       fill
                       sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                        sponsor.radius ? 'rounded-full' : ''
-                      }`}
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                        }`}
                     />
                   </div>
 
@@ -87,9 +149,8 @@ const Partners = () => {
                       alt={sponsor.name}
                       fill
                       sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                        sponsor.radius ? 'rounded-full' : ''
-                      }`}
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                        }`}
                     />
                   </div>
 
@@ -130,9 +191,8 @@ const Partners = () => {
                       alt={sponsor.name}
                       fill
                       sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                        sponsor.radius ? 'rounded-full' : ''
-                      }`}
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                        }`}
                     />
                   </div>
 
@@ -151,9 +211,8 @@ const Partners = () => {
                       alt={sponsor.name}
                       fill
                       sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                        sponsor.radius ? 'rounded-full' : ''
-                      }`}
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                        }`}
                     />
                   </div>
 
@@ -176,7 +235,7 @@ const Partners = () => {
               </span>
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-pink-400/20" />
             </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 lg:gap-5">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:gap-5">
               {mediaPartners.map((sponsor, index) => (
                 sponsor.website ? (
                   <a
@@ -184,7 +243,7 @@ const Partners = () => {
                     href={sponsor.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-pink-400/20 hover:bg-white/[0.05] sm:p-4"
+                    className="group relative flex w-[200px] items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-pink-400/20 hover:bg-white/[0.05] sm:w-[220px] sm:p-4"
                     aria-label={`Visit ${sponsor.name}`}
                   >
                     <div className="relative h-10 w-full sm:h-14 md:h-16">
@@ -193,9 +252,8 @@ const Partners = () => {
                         alt={sponsor.name}
                         fill
                         sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
-                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                          sponsor.radius ? 'rounded-full' : ''
-                        }`}
+                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                          }`}
                       />
                     </div>
                     <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
@@ -205,7 +263,7 @@ const Partners = () => {
                 ) : (
                   <div
                     key={index}
-                    className="group relative flex items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-pink-400/20 hover:bg-white/[0.05] sm:p-4"
+                    className="group relative flex w-[200px] items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-pink-400/20 hover:bg-white/[0.05] sm:w-[220px] sm:p-4"
                   >
                     <div className="relative h-10 w-full sm:h-14 md:h-16">
                       <Image
@@ -213,9 +271,8 @@ const Partners = () => {
                         alt={sponsor.name}
                         fill
                         sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
-                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                          sponsor.radius ? 'rounded-full' : ''
-                        }`}
+                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                          }`}
                       />
                     </div>
                     <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
@@ -229,7 +286,7 @@ const Partners = () => {
         )}
 
         {/* Community Partners */}
-        <div>
+        <div className="mt-10">
           <div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-secondary/20" />
             <span className="whitespace-nowrap rounded-full border border-secondary/20 bg-secondary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-secondary font-montserrat">
@@ -255,9 +312,8 @@ const Partners = () => {
                       alt={sponsor.name}
                       fill
                       sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                        sponsor.radius ? 'rounded-full' : ''
-                      }`}
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                        }`}
                     />
                   </div>
 
@@ -277,9 +333,8 @@ const Partners = () => {
                       alt={sponsor.name}
                       fill
                       sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
-                        sponsor.radius ? 'rounded-full' : ''
-                      }`}
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
+                        }`}
                     />
                   </div>
 
