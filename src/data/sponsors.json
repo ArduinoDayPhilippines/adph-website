@@ -56,6 +56,14 @@
     "height": 120,
     "tier": "gold"
   },
+    {
+    "name": "iCORE",
+    "path_to_image": "/images/logos/ICOREE.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "gold"
+  },
   {
     "name": "UE Society of Computer Engineering Students",
     "path_to_image": "/images/logos/coess_logo.png",
