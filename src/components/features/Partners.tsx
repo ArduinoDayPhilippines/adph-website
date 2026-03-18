@@ -8,6 +8,9 @@ const Partners = () => {
   const keystoneSponsors = sponsors.filter(
     (s: { tier?: string }) => s.tier === 'keystone'
   )
+  const goldSponsors = sponsors.filter(
+    (s: { tier?: string }) => s.tier === 'gold'
+  )
   const communityPartners = sponsors.filter(
     (s: { tier?: string }) => s.tier === 'community'
   )
@@ -89,6 +92,69 @@ const Partners = () => {
 
                   {/* Name tooltip on hover */}
                   <div className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-3 py-1 text-xs text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat">
+                    {sponsor.name}
+                  </div>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+
+        {/* Gold Sponsors */}
+        <div className="mb-14 sm:mb-20">
+          <div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-300/30" />
+            <span className="whitespace-nowrap rounded-full border border-amber-300/25 bg-amber-300/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200 font-montserrat">
+              Gold Sponsors
+            </span>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-300/30" />
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 lg:gap-6">
+            {goldSponsors.map((sponsor, index) => (
+              sponsor.website ? (
+                <a
+                  key={index}
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex w-[240px] items-center justify-center rounded-xl border border-white/[0.05] bg-white/[0.025] p-4 backdrop-blur-sm transition-all duration-300 hover:border-amber-300/30 hover:bg-white/[0.06] sm:w-[260px] sm:p-5"
+                  aria-label={`Visit ${sponsor.name}`}
+                >
+                  <div className="relative h-12 w-full sm:h-14 md:h-16">
+                    <Image
+                      src={sponsor.path_to_image}
+                      alt={sponsor.name}
+                      fill
+                      sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
+                        sponsor.radius ? 'rounded-full' : ''
+                      }`}
+                    />
+                  </div>
+
+                  <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
+                    {sponsor.name}
+                  </div>
+                </a>
+              ) : (
+                <div
+                  key={index}
+                  className="group relative flex w-[240px] items-center justify-center rounded-xl border border-white/[0.05] bg-white/[0.025] p-4 backdrop-blur-sm transition-all duration-300 hover:border-amber-300/30 hover:bg-white/[0.06] sm:w-[260px] sm:p-5"
+                >
+                  <div className="relative h-12 w-full sm:h-14 md:h-16">
+                    <Image
+                      src={sponsor.path_to_image}
+                      alt={sponsor.name}
+                      fill
+                      sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
+                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
+                        sponsor.radius ? 'rounded-full' : ''
+                      }`}
+                    />
+                  </div>
+
+                  <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
                     {sponsor.name}
                   </div>
                 </div>
