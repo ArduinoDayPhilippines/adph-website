@@ -2,6 +2,7 @@ import FAQs from "@/components/features/FAQs";
 import Footer from "@/components/features/Footer";
 import CtaBanner from "@/components/features/CtaBanner";
 import ComingSoon from "@/components/features/ComingSoon";
+import AgendaSchedule from "@/components/features/AgendaSchedule";
 import Location from "@/components/features/Location";
 import Navbar from "@/components/features/Navbar";
 import { Hero } from "@/components/features/Hero";
@@ -58,10 +59,7 @@ export default function Home() {
 				</Reveal>
 				<Reveal>
 					<section id="agenda" className="scroll-mt-24 py-10 sm:py-16 md:py-24">
-						<ComingSoon
-							label="Agenda"
-							description="We are dialing in the flow so every session has breathing room and impact. Timing, rooms, and transitions will be shared shortly."
-						/>
+						<AgendaSchedule />
 					</section>
 				</Reveal>
 	
