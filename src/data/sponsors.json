@@ -1,110 +1,23 @@
 [
   {
-    "name": "ICpEP Philippines",
-    "path_to_image": "/images/logos/ICpEP_PH.png",
+    "name": "CircuitRocks",
+    "path_to_image": "/images/logos/circuitrocks.png",
+    "website": "https://circuit.rocks/?gad_campaignid=22840677038",
     "radius": 0,
     "width": 120,
     "height": 120,
     "tier": "keystone"
   },
   {
-    "name": "ICpEP PH Student Edition",
-    "path_to_image": "/images/logos/ICpEP_PH_STUDENT.png",
+    "name": "Able Design",
+    "path_to_image": "/images/logos/able_design.png",
     "radius": 0,
     "width": 120,
     "height": 120,
-    "tier": "keystone"
+    "tier": "gold"
   },
   {
-    "name": "Shiftsolv3D",
-    "path_to_image": "/images/logos/shiftsolved-dark.png",
-    "radius": 0,
-    "width": 200,
-    "height": 200,
-    "tier": "keystone"
-  },
-  {
-    "name": "DevCon Kids",
-    "path_to_image": "/images/logos/devcon_kids.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "keystone"
-  },
-  {
-    "name": "KakaComputer",
-    "path_to_image": "/images/logos/kaka-computer.png",
-    "radius": 0,
-    "width": 150,
-    "height": 150,
-    "tier": "keystone"
-  },
-  {
-    "name": "TechStart TV",
-    "path_to_image": "/images/logos/TechStart_TV_text_logo.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "keystone"
-  },
-  {
-    "name": "Association of Computer Engineering Students",
-    "path_to_image": "/images/logos/ACpES logo.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "AWSCC Haribon",
-    "path_to_image": "/images/logos/AWS_CC_Haribon.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "AWSCC-PUP",
-    "path_to_image": "/images/logos/AWS_CC_PUP.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "AWSCC CVSU",
-    "path_to_image": "/images/logos/AWS_CVSU.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "Blaze Team Elizabeth Seton School",
-    "path_to_image": "/images/logos/blaze_logo.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "CCITSC",
-    "path_to_image": "/images/logos/CCITSC_Logo.PNG",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "CISCO NETCONNECT PUP",
-    "path_to_image": "/images/logos/CISCO NETCONNECT PUP LOGO.png",
-    "radius": 100,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "CoESS - UE Caloocan",
+    "name": "UE Society of Computer Engineering Students",
     "path_to_image": "/images/logos/coess_logo.png",
     "radius": 0,
     "width": 120,
@@ -112,47 +25,47 @@
     "tier": "community"
   },
   {
-    "name": "CpEO FEU Tech",
-    "path_to_image": "/images/logos/CpEO_FIT_Logo.png",
+    "name": "SAKTO Sto. Tomas City Federation",
+    "path_to_image": "/images/logos/SAKTO_STC-B_Logo.png",
     "radius": 0,
     "width": 120,
     "height": 120,
     "tier": "community"
   },
   {
-    "name": "EUCPESS-ICpEP.SE",
-    "path_to_image": "/images/logos/EUCPESS-ICpEP logo.png",
+    "name": "AWS Cloud Club - Haribon",
+    "path_to_image": "/images/logos/AWS_CC_Haribon.png",
     "radius": 0,
     "width": 120,
     "height": 120,
     "tier": "community"
   },
   {
-    "name": "FEATI Computer Society",
-    "path_to_image": "/images/logos/FEATI Computer Society Logo.png",
+    "name": "PUP Microsoft Student Community",
+    "path_to_image": "/images/logos/MSC - PLM Logo.png",
     "radius": 0,
     "width": 120,
     "height": 120,
     "tier": "community"
   },
   {
-    "name": "GDG On Campus - DLSU",
+    "name": "Google Developers Group on Campus PUP",
     "path_to_image": "/images/logos/GDG On Campus_Template.png",
     "radius": 0,
-    "width": 200,
-    "height": 200,
-    "tier": "community"
-  },
-  {
-    "name": "GDG On Campus - Mapua Manila",
-    "path_to_image": "/images/logos/GDGoC Mapua Manila Logo.jpg",
-    "radius": 100,
     "width": 120,
     "height": 120,
     "tier": "community"
   },
   {
-    "name": "IBITS",
+    "name": "BLAZE Robotics Team",
+    "path_to_image": "/images/logos/blaze_logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Institute of Bachelors in Information Technology Studies (IBITS)",
     "path_to_image": "/images/logos/IBITS.png",
     "radius": 0,
     "width": 120,
@@ -160,32 +73,264 @@
     "tier": "community"
   },
   {
-    "name": "ICpEP.SE MAKATI",
-    "path_to_image": "/images/logos/ICpEP_MAKATI.png",
+    "name": "Junior Philippine Computer Society - Asia Pacific College Chapter",
+    "path_to_image": "/images/logos/JPCS-APC.png",
     "radius": 0,
     "width": 120,
     "height": 120,
     "tier": "community"
   },
   {
-    "name": "ICpEP.SE NCST",
-    "path_to_image": "/images/logos/icpep_ncst.png",
+    "name": "Adamson Computer Engineering Society",
+    "path_to_image": "/images/logos/ACpES logo.png",
     "radius": 0,
     "width": 120,
     "height": 120,
     "tier": "community"
   },
   {
-    "name": "ICpEP.SE NUD Dasmarinas",
-    "path_to_image": "/images/logos/ICpEP_SE_NUD_LOGO.png",
+    "name": "Association of Computer Engineering Students",
+    "path_to_image": "",
     "radius": 0,
     "width": 120,
     "height": 120,
     "tier": "community"
   },
   {
-    "name": "ICpEP.SE CDMC",
-    "path_to_image": "/images/logos/ICPEPse_CDMC_COLORED.png",
+    "name": "Engineers Guild PH",
+    "path_to_image": "/images/logos/Engineers_Guild_PH.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Computer Engineering Students' Society - UE Caloocan",
+    "path_to_image": "/images/logos/coess_logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Digital Creatives",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "The East Innovators",
+    "path_to_image": "/images/logos/E.I_LOGO.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Enverga University Computer Engineering Student Society - Institute of Computer Engineers of the Philippines",
+    "path_to_image": "/images/logos/EUCPESS-ICPEP.SE.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Institute of Computer Engineers of the Philippines Student Edition - National University Chapter",
+    "path_to_image": "/images/logos/ICPEP.SE_NUC_LOGO.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "ARK - AcademicTech Research and Knowledge",
+    "path_to_image": "/images/logos/ARK.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "InnoByte Technology Solutions",
+    "path_to_image": "/images/logos/Innobyte.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "ICAN Robotics Club",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "WorkFlow PH",
+    "path_to_image": "/images/logos/WorkFlowPH.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Institute of Electronics Engineers of the Philippines - MSEUF SC",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "LSIS - NEXUS Robotics Team",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Junior Philippine Computer Society - FEU Tech",
+    "path_to_image": "/images/logos/JPCSFEU.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "PUP The Programmers Guild",
+    "path_to_image": "/images/logos/PUP TPG Logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Institute of Computer Engineers of the Philippines Student Edition - EACM Chapter",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Computer Engineering Organization - FEU Tech",
+    "path_to_image": "/images/logos/CpEO_FIT_Logo.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Institute of Computer Engineers of the Philippines - Student Edition NUD Chapters",
+    "path_to_image": "/images/logos/ICPEPDASMA.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Institute of Computer Engineers of the Philippines - FEU Alabang",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Seekers Guild",
+    "path_to_image": "/images/logos/SeekersGuild.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "AWSCC eNovators",
+    "path_to_image": "/images/logos/enovator.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "PUP Junior Society of Mechanical Engineers",
+    "path_to_image": "/images/logos/PUPJSME.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "IEEE Computer Society Philippines Chapter",
+    "path_to_image": "/images/logos/2.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "FRWRD",
+    "path_to_image": "/images/logos/FRWRD_white.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "AWS Cloud Club - Spade",
+    "path_to_image": "/images/logos/AWSCC-Spade.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "ICPEP SE-PUP Manila",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "IEEE Consumer Technology Philippine Chapter",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "AWS Learning Club - UE Caloocan",
+    "path_to_image": "/images/logos/AWSUECAL.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Cisco NetConnect PUP - Manila",
+    "path_to_image": "/images/logos/CISCO NETCONNECT PUP LOGO.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "ISKOnovators Student Community",
+    "path_to_image": "/images/logos/ICpEP_PH_STUDENT.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Elizabeth Seton School - Las Pinas",
+    "path_to_image": "/images/logos/elizabeth_seton.png",
     "radius": 0,
     "width": 120,
     "height": 120,
@@ -200,22 +345,6 @@
     "tier": "community"
   },
   {
-    "name": "IECEP MSEUF",
-    "path_to_image": "/images/logos/iecep-mseuf.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "IGNITE WHITE",
-    "path_to_image": "/images/logos/IGNITE WHITE.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
     "name": "ISC PUP Sto. Tomas",
     "path_to_image": "/images/logos/ISC Logo.png",
     "radius": 0,
@@ -224,56 +353,8 @@
     "tier": "community"
   },
   {
-    "name": "JPCS APC",
-    "path_to_image": "/images/logos/JPCS-APC.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "MRSP PUPSS",
-    "path_to_image": "/images/logos/mrsp_pupse.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "MSC - PLM",
-    "path_to_image": "/images/logos/MSC - PLM Logo.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "PUP TPG",
-    "path_to_image": "/images/logos/PUP TPG Logo.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "PUP Hygears",
-    "path_to_image": "/images/logos/pup_hygears.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "SAKTO STC-B",
-    "path_to_image": "/images/logos/SAKTO_STC-B_Logo.png",
-    "radius": 0,
-    "width": 120,
-    "height": 120,
-    "tier": "community"
-  },
-  {
-    "name": "Young Founders Summit PH",
-    "path_to_image": "/images/logos/yfs.png",
+    "name": "Kakacomputer",
+    "path_to_image": "/images/logos/kaka-computer.png",
     "radius": 0,
     "width": 120,
     "height": 120,

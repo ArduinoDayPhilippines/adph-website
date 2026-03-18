@@ -64,16 +64,17 @@ export default function Navbar() {
 					aria-label="Primary navigation"
 				>
 					<div className="flex items-center justify-between gap-3 px-4 py-2 md:px-5">
-						{/* Logo */}
-						<Link href="/" className="flex items-center gap-2 rounded-full px-2 py-1">
-							<Image
-								src="/assets/logo.png"
-								alt="Logo"
-								width={40}
-								height={40}
-								className="h-9 w-auto object-cover"
-							/>
-						</Link>
+					{/* Logo */}
+					<Link href="/" className="flex items-center gap-2 rounded-full px-2 py-1">
+						<Image
+							src="/assets/logo.png"
+							alt="Arduino Days 2026 Philippines Logo"
+							width={200}
+							height={80}
+							className="h-9 w-auto object-contain"
+							priority
+						/>
+					</Link>
 
 						{/* Desktop navigation */}
 						<ul className="hidden items-center gap-1 md:flex">
@@ -95,12 +96,14 @@ export default function Navbar() {
 
 						{/* Right side actions */}
 						<div className="flex items-center gap-2">
-							<Link
-								href="https://arduinodayph.pwapilipinas.org/"
-								className="hidden h-10 items-center rounded-full bg-[#21935B] px-6 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-200 hover:bg-[#1a7a4a] hover:shadow-[0_0_16px_rgba(33,147,91,0.3)] md:inline-flex"
-							>
-								JOIN US
-							</Link>
+					<Link
+						href="https://www.facebook.com/arduinodayph"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="hidden h-10 items-center rounded-full bg-[#21935B] px-6 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-200 hover:bg-[#1a7a4a] hover:shadow-[0_0_16px_rgba(33,147,91,0.3)] md:inline-flex"
+					>
+						JOIN US
+					</Link>
 
 							{/* Mobile Menu Toggle */}
 							<button
@@ -168,13 +171,15 @@ export default function Navbar() {
 								</li>
 							))}
 							<li>
-								<Link
-									href="https://arduinodayph.pwapilipinas.org/"
-									className="block rounded-xl px-4 py-3 text-base font-medium text-white/80 transition-colors duration-150 hover:bg-white/[0.08] hover:text-white"
-									onClick={closeMenu}
-								>
-									Join Us
-								</Link>
+						<Link
+							href="https://www.facebook.com/arduinodayph"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="block rounded-xl px-4 py-3 text-base font-medium text-white/80 transition-colors duration-150 hover:bg-white/[0.08] hover:text-white"
+							onClick={closeMenu}
+						>
+							Join Us
+						</Link>
 							</li>
 						</ul>
 					</div>
