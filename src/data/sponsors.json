@@ -1,5 +1,45 @@
 [
   {
+    "name": "Explained PH",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "media"
+  },
+  {
+    "name": "KakaComputer",
+    "path_to_image": "/images/logos/kaka-computer.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "media"
+  },
+  {
+    "name": "Just In Case",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "media"
+  },
+  {
+    "name": "Now You Know",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "media"
+  },
+  {
+    "name": "Tekkie Pinas",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "media"
+  },
+  {
     "name": "CircuitRocks",
     "path_to_image": "/images/logos/circuitrocks.png",
     "website": "https://circuit.rocks/?gad_campaignid=22840677038",
@@ -145,7 +185,7 @@
     "tier": "community"
   },
   {
-    "name": "ARK - AcademicTech Research and Knowledge",
+    "name": "ARK - AcademiTech Research and Knowledge",
     "path_to_image": "/images/logos/ARK.png",
     "radius": 0,
     "width": 120,
@@ -353,8 +393,88 @@
     "tier": "community"
   },
   {
-    "name": "Kakacomputer",
-    "path_to_image": "/images/logos/kaka-computer.png",
+    "name": "Association of Computer Engineering Students (De La Salle University)",
+    "path_to_image": "/images/logos/ACCESS_LOGO.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Association of Computer Engineering Students (STI-Ortigas Cainta)",
+      "path_to_image": "/images/logos/ACES_LOGO.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Association of Computer Engineers United - Lyceum of the Philippines University - Cavite Student Chapter",
+    "path_to_image": "/images/logos/ACESLYCEUM .png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "AWS Cloud Club PUP",
+    "path_to_image": "/images/logos/AWSCC.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "AWS Learning Club Alpha",
+    "path_to_image": "/images/logos/AWSLOGO.png",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "CPE society (Computer engineering)",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Institute of Computer Engineers of the Philippines - Student Edition - Makati Science Technological Institute of the Philippines",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Institute of Computer Engineers of the Philippines - Student Edition National",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Institute of the Computer Engineering of the Philippines. Student Edition - EACM Chapter",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "ISKOnnovators Student Community",
+    "path_to_image": "",
+    "radius": 0,
+    "width": 120,
+    "height": 120,
+    "tier": "community"
+  },
+  {
+    "name": "Junior Philippines Computer Society - FEUTECH",
+    "path_to_image": "",
     "radius": 0,
     "width": 120,
     "height": 120,
