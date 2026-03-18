@@ -14,6 +14,9 @@ const Partners = () => {
   const communityPartners = sponsors.filter(
     (s: { tier?: string }) => s.tier === 'community'
   )
+  const mediaPartners = sponsors.filter(
+    (s: { tier?: string }) => s.tier === 'media'
+  )
 
   return (
     <div className="py-8 sm:py-12 md:py-16">
@@ -162,6 +165,68 @@ const Partners = () => {
             ))}
           </div>
         </div>
+
+        {/* Media Partners */}
+        {mediaPartners.length > 0 && (
+          <div className="mt-16">
+            <div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-pink-400/20" />
+              <span className="whitespace-nowrap rounded-full border border-pink-400/20 bg-pink-400/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-pink-300 font-montserrat">
+                Media Partners
+              </span>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-pink-400/20" />
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 lg:gap-5">
+              {mediaPartners.map((sponsor, index) => (
+                sponsor.website ? (
+                  <a
+                    key={index}
+                    href={sponsor.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-pink-400/20 hover:bg-white/[0.05] sm:p-4"
+                    aria-label={`Visit ${sponsor.name}`}
+                  >
+                    <div className="relative h-10 w-full sm:h-14 md:h-16">
+                      <Image
+                        src={sponsor.path_to_image}
+                        alt={sponsor.name}
+                        fill
+                        sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
+                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
+                          sponsor.radius ? 'rounded-full' : ''
+                        }`}
+                      />
+                    </div>
+                    <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
+                      {sponsor.name}
+                    </div>
+                  </a>
+                ) : (
+                  <div
+                    key={index}
+                    className="group relative flex items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-pink-400/20 hover:bg-white/[0.05] sm:p-4"
+                  >
+                    <div className="relative h-10 w-full sm:h-14 md:h-16">
+                      <Image
+                        src={sponsor.path_to_image}
+                        alt={sponsor.name}
+                        fill
+                        sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
+                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${
+                          sponsor.radius ? 'rounded-full' : ''
+                        }`}
+                      />
+                    </div>
+                    <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
+                      {sponsor.name}
+                    </div>
+                  </div>
+                )
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Community Partners */}
         <div>
