@@ -3,49 +3,69 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTextScramble } from "@/lib/useTextScramble";
+import { IconArrowUpRight, IconMenu2, IconX, IconMail } from "@tabler/icons-react";
+
+interface NavItemProps {
+	href: string;
+	label: string;
+	onClick: (href: string) => void;
+	comingSoon?: boolean;
+}
+
+function GridNavLink({ href, label, onClick }: NavItemProps) {
+	const { displayText, trigger } = useTextScramble(label, { speed: 25, scrambleDuration: 300 });
+
+	return (
+		<Link
+			href={href}
+			onMouseEnter={trigger}
+			onClick={(e) => {
+				e.preventDefault();
+				onClick(href);
+			}}
+			className="flex h-full items-center border-r border-[#2d373d] px-5 py-4 font-mono text-xs font-medium tracking-wider text-white/70 uppercase transition-all duration-200 hover:bg-white/[0.06] hover:text-primary"
+		>
+			<span>{displayText}</span>
+		</Link>
+	);
+}
+
+function GridNavLinkSoon({ label }: Pick<NavItemProps, "label">) {
+	return (
+		<span className="flex h-full items-center gap-2 border-r border-[#2d373d] px-5 py-4 font-mono text-xs font-medium tracking-wider text-white/30 uppercase cursor-default select-none">
+			{label}
+			<span className="rounded border border-secondary/40 bg-secondary/10 px-1.5 py-0.5 text-[9px] font-bold text-secondary uppercase leading-none">
+				Soon
+			</span>
+		</span>
+	);
+}
 
 export default function Navbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
 
 	const navItems = [
 		{ href: "#about", label: "About" },
-		{ href: "#agenda", label: "Events" },
-		{ href: "#merch", label: "Merch" },
-		{ href: "#partners", label: "Partners" },
-		{ href: "#speakers", label: "Speakers" },
+		{ href: "#launchpad", label: "Launchpad" },
+		{ href: "#volunteers", label: "Volunteers" },
+		{ href: "#partner-with-us", label: "Partner with Us", comingSoon: true },
+		{ href: "#archive", label: "2026 Archive" },
 		{ href: "#faqs", label: "FAQ" },
+		{ href: "#merch", label: "Merch", comingSoon: true },
 	];
 
-	const toggleMenu = () => {
-		setIsMenuOpen(!isMenuOpen);
-	};
-
-	const closeMenu = () => {
-		setIsMenuOpen(false);
-	};
-
-	// Smooth Scrolling Effect
 	useEffect(() => {
-		const scrollToHash = (hash: string) => {
-			if (!hash) return;
-			const targetElement = document.querySelector(hash);
-			if (targetElement) {
-				targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-			}
+		const handleScroll = () => {
+			setScrolled(window.scrollY > 10);
 		};
-
-		const handleHashChange = () => {
-			scrollToHash(window.location.hash);
-		};
-
-		window.addEventListener("hashchange", handleHashChange, false);
-
-		if (window.location.hash) setTimeout(handleHashChange, 100);
-
-		return () => {
-			window.removeEventListener("hashchange", handleHashChange);
-		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
+
+	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+	const closeMenu = () => setIsMenuOpen(false);
 
 	const handleNavItemClick = (href: string) => {
 		closeMenu();
@@ -57,134 +77,128 @@ export default function Navbar() {
 	};
 
 	return (
-		<header className="fixed inset-x-0 top-0 z-50 w-full">
-			<div className="mx-auto w-full max-w-6xl px-4 py-3">
-				<nav
-					className="rounded-full bg-white/[0.04] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)] backdrop-blur-xl"
-					aria-label="Primary navigation"
-				>
-					<div className="flex items-center justify-between gap-3 px-4 py-2 md:px-5">
-					{/* Logo */}
-					<Link href="/" className="flex items-center gap-2 rounded-full px-2 py-1">
+		<header
+			className={`sticky top-0 z-50 w-full border-b border-[#2d373d] transition-all duration-200 ${
+				scrolled
+					? "bg-[#061116]/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.6)]"
+					: "bg-[#061116]/70 backdrop-blur-md"
+			}`}
+		>
+			{/* GitHub Universe Grid Bar with Brand Highlights */}
+			<div className="mx-auto flex h-14 w-full max-w-7xl items-stretch justify-between border-x border-[#2d373d]">
+				{/* Left Cell: Logo Mark */}
+				<div className="flex items-center border-r border-[#2d373d] px-4 sm:px-6">
+					<Link href="/" className="flex items-center">
 						<Image
 							src="/assets/logo.png"
-							alt="Arduino Days 2026 Philippines Logo"
-							width={200}
-							height={80}
-							className="h-9 w-auto object-contain"
+							alt="Arduino Day Philippines Logo"
+							width={140}
+							height={40}
+							className="h-7 w-auto object-contain"
 							priority
 						/>
 					</Link>
+				</div>
 
-						{/* Desktop navigation */}
-						<ul className="hidden items-center gap-1 md:flex">
-							{navItems.map((item) => (
-								<li key={item.href}>
-									<Link
-										href={item.href}
-										className="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-all duration-200 hover:bg-white/[0.08] hover:text-white"
-										onClick={(e) => {
-											e.preventDefault();
-											handleNavItemClick(item.href);
-										}}
-									>
-										{item.label}
-									</Link>
-								</li>
-							))}
-						</ul>
-
-						{/* Right side actions */}
-						<div className="flex items-center gap-2">
-					<Link
-						href="https://www.facebook.com/arduinodayph"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="hidden h-10 items-center rounded-full bg-[#21935B] px-6 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-200 hover:bg-[#1a7a4a] hover:shadow-[0_0_16px_rgba(33,147,91,0.3)] md:inline-flex"
-					>
-						JOIN US
-					</Link>
-
-							{/* Mobile Menu Toggle */}
-							<button
-								onClick={toggleMenu}
-								className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/[0.06] text-white transition-all duration-200 hover:bg-white/[0.12] focus:outline-none focus:ring-2 focus:ring-white/20 md:hidden"
-								aria-controls="navbar-menu"
-								aria-expanded={isMenuOpen}
-								aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-							>
-								{isMenuOpen ? (
-									<svg
-										className="h-5 w-5"
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										strokeWidth="2"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M6 18L18 6M6 6l12 12"
-										/>
-									</svg>
-								) : (
-									<svg
-										className="h-5 w-5"
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 17 14"
-									>
-										<path
-											stroke="currentColor"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											strokeWidth="2"
-											d="M1 1h15M1 7h15M1 13h15"
-										/>
-									</svg>
-								)}
-							</button>
-						</div>
-					</div>
+				{/* Middle Navigation Cells (Universe Blueprint Grid) */}
+				<nav className="hidden items-stretch lg:flex flex-1" aria-label="Primary navigation">
+					{navItems.map((item) =>
+						item.comingSoon ? (
+							<GridNavLinkSoon key={item.href} label={item.label} />
+						) : (
+							<GridNavLink
+								key={item.href}
+								href={item.href}
+								label={item.label}
+								onClick={handleNavItemClick}
+							/>
+						)
+					)}
 				</nav>
 
-				{/* Mobile dropdown */}
-				<div
-					id="navbar-menu"
-					className={`${isMenuOpen ? "block" : "hidden"} mt-2 md:hidden`}
-				>
-					<div className="rounded-2xl bg-black/70 backdrop-blur-xl">
-						<ul className="flex flex-col p-3">
-							{navItems.map((item) => (
-								<li key={item.href}>
-									<Link
-										href={item.href}
-										className="block rounded-xl px-4 py-3 text-base font-medium text-white/80 transition-colors duration-150 hover:bg-white/[0.08] hover:text-white"
-										onClick={(e) => {
-											e.preventDefault();
-											handleNavItemClick(item.href);
-										}}
-									>
-										{item.label}
-									</Link>
-								</li>
-							))}
-							<li>
-						<Link
-							href="https://www.facebook.com/arduinodayph"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="block rounded-xl px-4 py-3 text-base font-medium text-white/80 transition-colors duration-150 hover:bg-white/[0.08] hover:text-white"
-							onClick={closeMenu}
-						>
-							Join Us
-						</Link>
-							</li>
-						</ul>
-					</div>
+				{/* Right Side Cells */}
+				<div className="flex items-stretch">
+					{/* Secondary Action: Inquiries */}
+					<a
+						href="mailto:arduinodayph@gmail.com"
+						className="hidden items-center gap-2 border-l border-[#2d373d] px-5 font-mono text-xs font-medium text-white/70 uppercase transition-all duration-200 hover:bg-white/[0.06] hover:text-secondary md:flex"
+					>
+						<IconMail className="h-4 w-4 text-secondary/80" />
+						<span>Contact</span>
+					</a>
+
+					{/* Primary Full-Height CTA Button (Emerald Green like original ADPH Join Us) */}
+					<a
+						href="https://volunteer.arduinodayphilippines.cc/"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex items-center gap-1.5 border-l border-[#2d373d] bg-[#21935B] px-5 sm:px-7 font-mono text-xs font-bold tracking-wider text-white uppercase transition-all duration-200 hover:bg-[#1a7a4a] hover:shadow-[0_0_20px_rgba(33,147,91,0.4)]"
+					>
+						<span>Volunteer &apos;27</span>
+						<IconArrowUpRight className="h-4 w-4" />
+					</a>
+
+					{/* Mobile Menu Button */}
+					<button
+						onClick={toggleMenu}
+						className="flex items-center justify-center border-l border-[#2d373d] px-4 text-white transition-colors hover:bg-white/[0.08] lg:hidden"
+						aria-controls="mobile-nav"
+						aria-expanded={isMenuOpen}
+						aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+					>
+						{isMenuOpen ? <IconX className="h-5 w-5 text-secondary" /> : <IconMenu2 className="h-5 w-5" />}
+					</button>
 				</div>
 			</div>
+
+			{/* Mobile Dropdown Panel */}
+			{isMenuOpen && (
+				<div
+					id="mobile-nav"
+					className="border-b border-[#2d373d] bg-[#0c181d]/95 px-4 py-4 backdrop-2xl lg:hidden animate-in fade-in duration-150"
+				>
+					<div className="mx-auto max-w-7xl flex flex-col divide-y divide-white/[0.08]">
+						{navItems.map((item) =>
+							item.comingSoon ? (
+								<span
+									key={item.href}
+									className="flex items-center justify-between py-3 font-mono text-xs uppercase tracking-wider text-white/30 cursor-default select-none"
+								>
+									<span>{item.label}</span>
+									<span className="rounded border border-secondary/40 bg-secondary/10 px-1.5 py-0.5 text-[9px] font-bold text-secondary uppercase leading-none">
+										Soon
+									</span>
+								</span>
+							) : (
+								<Link
+									key={item.href}
+									href={item.href}
+									className="flex items-center justify-between py-3 font-mono text-xs uppercase tracking-wider text-white/80 transition-colors hover:text-primary"
+									onClick={(e) => {
+										e.preventDefault();
+										handleNavItemClick(item.href);
+									}}
+								>
+									<span>{item.label}</span>
+									<span className="text-[10px] text-primary">&#8599;</span>
+								</Link>
+							)
+						)}
+						<div className="pt-3 flex gap-2">
+							<a
+								href="https://volunteer.arduinodayphilippines.cc/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-[#21935B] py-2.5 font-mono text-xs font-bold uppercase tracking-wider text-white"
+								onClick={closeMenu}
+							>
+								<span>Apply to Volunteer</span>
+								<IconArrowUpRight className="h-4 w-4" />
+							</a>
+						</div>
+					</div>
+				</div>
+			)}
 		</header>
 	);
 }

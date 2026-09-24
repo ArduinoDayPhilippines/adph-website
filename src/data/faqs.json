@@ -1,34 +1,26 @@
 [
   {
     "question": "What is Arduino Day Philippines?",
-    "answer": "Arduino Day is a global celebration of Arduino's birthday, bringing together makers, engineers, and technology enthusiasts. The Philippines chapter is a community-led gathering focused on sharing builds, ideas, and open-source learnings."
+    "answer": "Arduino Day Philippines is the official community-led national celebration of open-source hardware, robotics, and embedded computing. It unites developers, tinkerers, students, and industry engineers for hands-on learning and innovation."
   },
   {
-    "question": "When and where is the event?",
-    "answer": "Arduino Day Philippines 2025 will be held on March 21, 2026, at the Asia Pacific College in Makati City. Doors open at 8 AM."
+    "question": "When and where is Arduino Day Philippines 2027?",
+    "answer": "Arduino Day Philippines 2027 is currently in its teaser ramp-up phase. The host venue in Metro Manila and the official event date will be announced soon. Sign up for alerts to be the first to know!"
   },
   {
-    "question": "How do I register and is it free?",
-    "answer": "Registration will open soon and the event will be free to attend. Pre-registration is required so we can manage capacity; walk-ins will be limited based on available seats."
+    "question": "How can I apply to volunteer for 2027?",
+    "answer": "Volunteer applications are now open! You can apply directly at https://volunteer.arduinodayphilippines.cc/ to join our core crew across hardware labs, stage operations, AV production, logistics, and community experience."
   },
   {
-    "question": "What can I expect in the program?",
-    "answer": "Expect community talks, demos, and booths. We are finalizing the lineup, agenda, and any build sprints or challenges. Details will be posted once confirmed."
+    "question": "How do I become a 2027 Sponsor or Partner?",
+    "answer": "2027 Corporate Sponsorship and Partner tiers are coming soon! For advance inquiries or customized partnerships, reach out directly to our organizing committee at arduinodayph@gmail.com."
   },
   {
-    "question": "Can I speak or showcase a project?",
-    "answer": "We will open a call for speakers and project exhibits soon. Keep an eye on announcements to submit your topic or project when the forms go live."
+    "question": "Is Arduino Day Philippines free to attend?",
+    "answer": "Yes! Arduino Day Philippines is free and open to everyone. Pre-registration passes will be launched once the official date and venue are revealed to manage room capacity."
   },
   {
-    "question": "How do I become a community or media partner?",
-    "answer": "We'd love to have you on board! You can fill out the partnership form here: https://bit.ly/adph2026-partnerships. For questions, email us at arduinodayph@gmail.com."
-  },
-  {
-    "question": "How can I support the event?",
-    "answer": "Sponsorship and in-kind support are very welcome! Fill out the sponsorship form here: https://forms.gle/arduinodayph-sponsor. You can also reach us at arduinodayph@gmail.com."
-  },
-  {
-    "question": "Will there be online streaming?",
-    "answer": "We are exploring a hybrid setup. If streaming is available, we will post links alongside the final schedule."
+    "question": "Can I present a talk or demo my hardware project?",
+    "answer": "Yes! A Call for Speakers and Project Showcase exhibits will be announced following our volunteer recruitment phase."
   }
 ]
