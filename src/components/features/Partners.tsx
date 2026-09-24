@@ -1,355 +1,253 @@
-'use client';
-import React from 'react'
-import Image from 'next/image'
-import { sponsors } from '@/data/index'
-import GlowingTextOrange from '@/components/ui/glow-text-orange'
+"use client";
 
-const Partners = () => {
-  const keystoneSponsors = sponsors.filter(
-    (s: { tier?: string }) => s.tier === 'keystone'
-  )
-  const goldSponsors = sponsors.filter(
-    (s: { tier?: string }) => s.tier === 'gold'
-  )
-  const communityPartners = sponsors.filter(
-    (s: { tier?: string }) => s.tier === 'community'
-  )
-  const venuePartners = sponsors.filter(
-    (s: { tier?: string }) => s.tier === 'venue'
-  )
-  const mediaPartners = sponsors.filter(
-    (s: { tier?: string }) => s.tier === 'media'
-  )
+import React, { useState, useMemo } from "react";
+import Image from "next/image";
+import { sponsors } from "@/data/index";
+import { IconArrowUpRight, IconSearch } from "@tabler/icons-react";
 
-  return (
-    <div className="py-8 sm:py-12 md:py-16">
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8">
-        {/* Section header */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-5 font-morganite">
-          Special Thanks To Our{' '}
-          <GlowingTextOrange className="font-bold">
-            Sponsors And Partners
-          </GlowingTextOrange>
-        </h1>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-sm text-white/50 font-montserrat sm:mb-16 sm:text-base">
-          The organizations and communities that make this event possible.
-        </p>
-
-        {/* Venue Partner */}
-        {venuePartners.length > 0 && (
-          <div className="mb-14 sm:mb-20">
-            <div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-emerald-400/20" />
-              <span className="whitespace-nowrap rounded-full border border-emerald-400/20 bg-emerald-400/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300 font-montserrat">
-                Venue Partner
-              </span>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-emerald-400/20" />
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 lg:gap-6">
-              {venuePartners.map((sponsor, index) =>
-                sponsor.website ? (
-                  <a
-                    key={index}
-                    href={sponsor.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative flex w-[200px] items-center justify-center rounded-xl border border-white/[0.05] bg-white/[0.025] p-4 backdrop-blur-sm transition-all duration-300 hover:border-emerald-400/30 hover:bg-white/[0.06] sm:w-[220px] sm:p-5"
-                    aria-label={`Visit ${sponsor.name}`}
-                  >
-                    <div className="relative h-12 w-full sm:h-14 md:h-16">
-                      <Image
-                        src={sponsor.path_to_image}
-                        alt={sponsor.name}
-                        fill
-                        sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
-                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                          }`}
-                      />
-                    </div>
-                    <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
-                      {sponsor.name}
-                    </div>
-                  </a>
-                ) : (
-                  <div
-                    key={index}
-                    className="group relative flex w-[200px] items-center justify-center rounded-xl border border-white/[0.05] bg-white/[0.025] p-4 backdrop-blur-sm transition-all duration-300 hover:border-emerald-400/30 hover:bg-white/[0.06] sm:w-[220px] sm:p-5"
-                  >
-                    <div className="relative h-12 w-full sm:h-14 md:h-16">
-                      <Image
-                        src={sponsor.path_to_image}
-                        alt={sponsor.name}
-                        fill
-                        sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
-                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                          }`}
-                      />
-                    </div>
-                    <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
-                      {sponsor.name}
-                    </div>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Keystone Sponsors */}
-        <div className="mb-14 sm:mb-20">
-          <div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/30" />
-            <span className="whitespace-nowrap rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary font-montserrat">
-              Keystone Sponsors
-            </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/30" />
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8">
-            {keystoneSponsors.map((sponsor, index) => (
-              sponsor.website ? (
-                <a
-                  key={index}
-                  href={sponsor.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative flex items-center justify-center rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.06] sm:p-6 lg:p-8"
-                  aria-label={`Visit ${sponsor.name}`}
-                >
-                  {/* Glow effect on hover */}
-                  <div className="pointer-events-none absolute inset-0 rounded-2xl bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                  <div className="relative h-16 w-24 sm:h-20 sm:w-32 lg:h-24 lg:w-36">
-                    <Image
-                      src={sponsor.path_to_image}
-                      alt={sponsor.name}
-                      fill
-                      sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                        }`}
-                    />
-                  </div>
-
-                  {/* Name tooltip on hover */}
-                  <div className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-3 py-1 text-xs text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat">
-                    {sponsor.name}
-                  </div>
-                </a>
-              ) : (
-                <div
-                  key={index}
-                  className="group relative flex items-center justify-center rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.06] sm:p-6 lg:p-8"
-                >
-                  {/* Glow effect on hover */}
-                  <div className="pointer-events-none absolute inset-0 rounded-2xl bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                  <div className="relative h-16 w-24 sm:h-20 sm:w-32 lg:h-24 lg:w-36">
-                    <Image
-                      src={sponsor.path_to_image}
-                      alt={sponsor.name}
-                      fill
-                      sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                        }`}
-                    />
-                  </div>
-
-                  {/* Name tooltip on hover */}
-                  <div className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-3 py-1 text-xs text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat">
-                    {sponsor.name}
-                  </div>
-                </div>
-              )
-            ))}
-          </div>
-        </div>
-
-        {/* Gold Sponsors */}
-        <div className="mb-14 sm:mb-20">
-          <div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-300/30" />
-            <span className="whitespace-nowrap rounded-full border border-amber-300/25 bg-amber-300/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200 font-montserrat">
-              Gold Sponsors
-            </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-300/30" />
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 lg:gap-6">
-            {goldSponsors.map((sponsor, index) => (
-              sponsor.website ? (
-                <a
-                  key={index}
-                  href={sponsor.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative flex w-[240px] items-center justify-center rounded-xl border border-white/[0.05] bg-white/[0.025] p-4 backdrop-blur-sm transition-all duration-300 hover:border-amber-300/30 hover:bg-white/[0.06] sm:w-[260px] sm:p-5"
-                  aria-label={`Visit ${sponsor.name}`}
-                >
-                  <div className="relative h-12 w-full sm:h-14 md:h-16">
-                    <Image
-                      src={sponsor.path_to_image}
-                      alt={sponsor.name}
-                      fill
-                      sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                        }`}
-                    />
-                  </div>
-
-                  <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
-                    {sponsor.name}
-                  </div>
-                </a>
-              ) : (
-                <div
-                  key={index}
-                  className="group relative flex w-[240px] items-center justify-center rounded-xl border border-white/[0.05] bg-white/[0.025] p-4 backdrop-blur-sm transition-all duration-300 hover:border-amber-300/30 hover:bg-white/[0.06] sm:w-[260px] sm:p-5"
-                >
-                  <div className="relative h-12 w-full sm:h-14 md:h-16">
-                    <Image
-                      src={sponsor.path_to_image}
-                      alt={sponsor.name}
-                      fill
-                      sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 20vw"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                        }`}
-                    />
-                  </div>
-
-                  <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
-                    {sponsor.name}
-                  </div>
-                </div>
-              )
-            ))}
-          </div>
-        </div>
-
-        {/* Media Partners */}
-        {mediaPartners.length > 0 && (
-          <div className="mt-16">
-            <div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-pink-400/20" />
-              <span className="whitespace-nowrap rounded-full border border-pink-400/20 bg-pink-400/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-pink-300 font-montserrat">
-                Media Partners
-              </span>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-pink-400/20" />
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:gap-5">
-              {mediaPartners.map((sponsor, index) => (
-                sponsor.website ? (
-                  <a
-                    key={index}
-                    href={sponsor.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative flex w-[200px] items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-pink-400/20 hover:bg-white/[0.05] sm:w-[220px] sm:p-4"
-                    aria-label={`Visit ${sponsor.name}`}
-                  >
-                    <div className="relative h-10 w-full sm:h-14 md:h-16">
-                      <Image
-                        src={sponsor.path_to_image}
-                        alt={sponsor.name}
-                        fill
-                        sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
-                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                          }`}
-                      />
-                    </div>
-                    <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
-                      {sponsor.name}
-                    </div>
-                  </a>
-                ) : (
-                  <div
-                    key={index}
-                    className="group relative flex w-[200px] items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-pink-400/20 hover:bg-white/[0.05] sm:w-[220px] sm:p-4"
-                  >
-                    <div className="relative h-10 w-full sm:h-14 md:h-16">
-                      <Image
-                        src={sponsor.path_to_image}
-                        alt={sponsor.name}
-                        fill
-                        sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
-                        className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                          }`}
-                      />
-                    </div>
-                    <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
-                      {sponsor.name}
-                    </div>
-                  </div>
-                )
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Community Partners */}
-        <div className="mt-10">
-          <div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-secondary/20" />
-            <span className="whitespace-nowrap rounded-full border border-secondary/20 bg-secondary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-secondary font-montserrat">
-              Community Partners
-            </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-secondary/20" />
-          </div>
-
-          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-6 lg:gap-5">
-            {communityPartners.map((sponsor, index) => (
-              sponsor.website ? (
-                <a
-                  key={index}
-                  href={sponsor.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative flex items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-secondary/20 hover:bg-white/[0.05] sm:p-4"
-                  aria-label={`Visit ${sponsor.name}`}
-                >
-                  <div className="relative h-10 w-full sm:h-14 md:h-16">
-                    <Image
-                      src={sponsor.path_to_image}
-                      alt={sponsor.name}
-                      fill
-                      sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                        }`}
-                    />
-                  </div>
-
-                  {/* Name tooltip on hover */}
-                  <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
-                    {sponsor.name}
-                  </div>
-                </a>
-              ) : (
-                <div
-                  key={index}
-                  className="group relative flex items-center justify-center rounded-xl border border-white/[0.04] bg-white/[0.02] p-3 backdrop-blur-sm transition-all duration-300 hover:border-secondary/20 hover:bg-white/[0.05] sm:p-4"
-                >
-                  <div className="relative h-10 w-full sm:h-14 md:h-16">
-                    <Image
-                      src={sponsor.path_to_image}
-                      alt={sponsor.name}
-                      fill
-                      sizes="(max-width: 640px) 28vw, (max-width: 1024px) 20vw, 14vw"
-                      className={`object-contain transition-all duration-300 group-hover:brightness-110 ${sponsor.radius ? 'rounded-full' : ''
-                        }`}
-                    />
-                  </div>
-
-                  {/* Name tooltip on hover */}
-                  <div className="pointer-events-none absolute -bottom-7 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-white/10 px-2.5 py-1 text-[10px] text-white/70 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 font-montserrat sm:text-xs">
-                    {sponsor.name}
-                  </div>
-                </div>
-              )
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+interface SponsorItem {
+	name: string;
+	path_to_image?: string;
+	website?: string;
+	tier?: string;
+	radius?: number;
 }
 
-export default Partners
+const TABS = [
+	{ id: "all", label: "all-partners/" },
+	{ id: "keystone", label: "keystone-sponsors/" },
+	{ id: "venue", label: "venue-partner/" },
+	{ id: "gold", label: "gold-sponsors/" },
+	{ id: "media", label: "media-partners/" },
+	{ id: "community", label: "community-partners/" },
+];
+
+const SECTIONS = [
+	{
+		id: "keystone-venue",
+		title: "keystone-&-venue-partners/",
+		badge: "PREMIER",
+		tiers: ["keystone", "venue"],
+		cardClass: "grid-cols-1 sm:grid-cols-2",
+		aspectRatio: "aspect-[16/9] sm:aspect-[2/1]",
+		logoPadding: "p-6 sm:p-10",
+	},
+	{
+		id: "gold",
+		title: "gold-sponsors/",
+		badge: "GOLD",
+		tiers: ["gold"],
+		cardClass: "grid-cols-1 sm:grid-cols-2",
+		aspectRatio: "aspect-[16/9] sm:aspect-[2/1]",
+		logoPadding: "p-6 sm:p-8",
+	},
+	{
+		id: "media",
+		title: "media-partners/",
+		badge: "MEDIA",
+		tiers: ["media"],
+		cardClass: "grid-cols-2 sm:grid-cols-3 md:grid-cols-5",
+		aspectRatio: "aspect-[4/3]",
+		logoPadding: "p-4 sm:p-6",
+	},
+	{
+		id: "community",
+		title: "community-partners/",
+		badge: "COMMUNITY",
+		tiers: ["community"],
+		cardClass: "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6",
+		aspectRatio: "aspect-[4/3]",
+		logoPadding: "p-3 sm:p-4",
+	},
+];
+
+export default function Partners() {
+	const [activeTab, setActiveTab] = useState("all");
+	const [searchQuery, setSearchQuery] = useState("");
+
+	const filteredSponsors = useMemo(() => {
+		return sponsors.filter((item: SponsorItem) => {
+			const matchesTab = activeTab === "all" || item.tier === activeTab;
+			const matchesQuery = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+			return matchesTab && matchesQuery;
+		});
+	}, [activeTab, searchQuery]);
+
+	const renderCard = (sponsor: SponsorItem, index: number, aspectRatio = "aspect-[4/3]", logoPadding = "p-4") => {
+		const CardWrapper = sponsor.website ? "a" : "div";
+		const cardProps = sponsor.website
+			? {
+					href: sponsor.website,
+					target: "_blank",
+					rel: "noopener noreferrer",
+					"aria-label": `Visit ${sponsor.name}`,
+			  }
+			: {};
+
+		return (
+			<CardWrapper
+				key={`${sponsor.name}-${index}`}
+				{...cardProps}
+				className="group relative flex flex-col justify-between border-r border-b border-[#2d373d] bg-[#08151a]/60 backdrop-blur-md transition-all duration-200 hover:bg-[#0c1f24]"
+			>
+				{/* Image Area with full color in base state, brightness/scale on hover */}
+				<div className={`relative ${aspectRatio} w-full overflow-hidden ${logoPadding} flex items-center justify-center bg-black/20`}>
+					{sponsor.path_to_image ? (
+						<Image
+							src={sponsor.path_to_image}
+							alt={sponsor.name}
+							fill
+							sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+							className={`object-contain p-2 opacity-95 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 group-hover:brightness-110 ${
+								sponsor.radius ? "rounded-full" : ""
+							}`}
+						/>
+					) : (
+						<span className="font-mono text-xs font-bold tracking-wider text-primary text-center px-2">
+							{sponsor.name}
+						</span>
+					)}
+
+					{/* Subtle inner grid lines on hover */}
+					<div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-primary/[0.04]" />
+				</div>
+
+				{/* Bottom Caption Strip */}
+				<div className="flex items-center justify-between border-t border-[#2d373d] bg-black/40 px-3 py-2 font-mono text-[11px] text-white/70">
+					<div className="truncate pr-2">
+						<span className="font-semibold text-white/90 group-hover:text-primary transition-colors">
+							{sponsor.name.toLowerCase()}
+						</span>
+						<span className="text-white/40">, {sponsor.tier || "partner"}</span>
+					</div>
+					{sponsor.website && (
+						<IconArrowUpRight className="h-3 w-3 shrink-0 text-white/40 group-hover:text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+					)}
+				</div>
+			</CardWrapper>
+		);
+	};
+
+	return (
+		<section id="archive" className="relative w-full bg-[#060e11] text-white">
+			{/* GitHub Universe Grid Container */}
+			<div className="mx-auto w-full max-w-7xl border-x border-[#2d373d] bg-[#071116] shadow-2xl">
+				{/* Top Section Header: refined compact size */}
+				<div className="border-b border-[#2d373d] px-6 py-5 sm:px-10 sm:py-6 lg:px-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+					<div>
+						{/* Path-style heading matching screenshot: smaller compact typography */}
+						<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight lowercase text-white">
+							featured-partners<span className="text-secondary">/</span>
+						</h2>
+					</div>
+
+					{/* 2027 Inquiries Pill */}
+					<div className="flex items-center gap-3">
+						<div className="inline-flex items-center gap-2 rounded border border-primary/40 bg-primary/10 px-4 py-1.5 font-mono text-xs font-semibold text-primary">
+							<span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+							<span>PARTNERSHIPS: COMING SOON</span>
+						</div>
+					</div>
+				</div>
+
+				{/* Filter Tabs Bar (Universe path-style tabs + Search) */}
+				<div className="flex flex-wrap items-center justify-between border-b border-[#2d373d] bg-white/[0.01]">
+					{/* Path-style Category Tabs */}
+					<div className="flex flex-wrap items-stretch">
+						{TABS.map((tab) => {
+							const count =
+								tab.id === "all"
+									? sponsors.length
+									: sponsors.filter((s: SponsorItem) => s.tier === tab.id).length;
+							if (count === 0 && tab.id !== "all") return null;
+
+							const isActive = activeTab === tab.id;
+							return (
+								<button
+									key={tab.id}
+									onClick={() => setActiveTab(tab.id)}
+									className={`flex items-center gap-2 border-r border-b sm:border-b-0 border-[#2d373d] px-4 py-3 font-mono text-xs transition-colors ${
+										isActive
+											? "bg-primary/20 text-primary font-bold shadow-[inset_0_-2px_0_#008080]"
+											: "text-white/60 hover:bg-white/[0.04] hover:text-white"
+									}`}
+								>
+									<span>{tab.label}</span>
+									<span className="text-[10px] text-white/40">[{count}]</span>
+								</button>
+							);
+						})}
+					</div>
+
+					{/* Inline Quick Search */}
+					<div className="relative flex items-center border-t sm:border-t-0 sm:border-l border-[#2d373d] px-4 py-2 w-full sm:w-auto">
+						<IconSearch className="h-3.5 w-3.5 text-white/40 mr-2 shrink-0" />
+						<input
+							type="text"
+							value={searchQuery}
+							onChange={(e) => setSearchQuery(e.target.value)}
+							placeholder="filter name..."
+							className="bg-transparent font-mono text-xs text-white placeholder-white/40 focus:outline-none w-36"
+						/>
+						{searchQuery && (
+							<button
+								onClick={() => setSearchQuery("")}
+								className="ml-1 text-[10px] font-mono text-secondary hover:underline"
+							>
+								clear
+							</button>
+						)}
+					</div>
+				</div>
+
+				{/* Content Shelf: Tiered Sections or Filtered Grid */}
+				{activeTab === "all" && !searchQuery ? (
+					// Tiered sections priority: Keystone & Venue -> Gold -> Media -> Community
+					<div className="divide-y divide-[#2d373d]">
+						{SECTIONS.map((sec) => {
+							const secSponsors = sponsors.filter((s: SponsorItem) =>
+								sec.tiers.includes(s.tier || "")
+							);
+							if (secSponsors.length === 0) return null;
+
+							return (
+								<div key={sec.id} className="flex flex-col">
+									{/* Section Divider Bar */}
+									<div className="flex items-center justify-between border-b border-[#2d373d] bg-white/[0.02] px-6 py-2.5 font-mono text-xs">
+										<div className="flex items-center gap-2">
+											<span className="font-bold text-white/90">{sec.title}</span>
+											<span className="text-[10px] text-white/40">[{secSponsors.length}]</span>
+										</div>
+										<span className="rounded border border-primary/30 bg-primary/10 px-2 py-0.5 text-[9px] font-bold text-primary tracking-wider uppercase">
+											{sec.badge}
+										</span>
+									</div>
+
+									{/* Section Grid Shelf */}
+									<div className={`grid ${sec.cardClass}`}>
+										{secSponsors.map((sponsor, idx) =>
+											renderCard(sponsor, idx, sec.aspectRatio, sec.logoPadding)
+										)}
+									</div>
+								</div>
+							);
+						})}
+					</div>
+				) : (
+					// Tab filtered or search filtered grid
+					<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4">
+						{filteredSponsors.map((sponsor: SponsorItem, index: number) =>
+							renderCard(sponsor, index)
+						)}
+					</div>
+				)}
+
+				{filteredSponsors.length === 0 && (
+					<div className="p-12 text-center font-mono text-sm text-white/50">
+						no partners matching &quot;{searchQuery}&quot; in this view.
+					</div>
+				)}
+			</div>
+		</section>
+	);
+}

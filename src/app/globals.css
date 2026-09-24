@@ -1,6 +1,52 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+	/* Brand palette */
+	--color-primary: #008080;
+	--color-secondary: #ee7402;
+	--color-accent: #1a6641;
+	--color-price: #f2bc51;
+	--color-black: #131118;
+	--color-white-50: #e8e8ea;
+	--color-white-100: #ffffff;
+
+	/* Typography */
+	--font-morganite: "Morganite", sans-serif;
+
+	/* Custom type scale (kept from legacy tailwind.config.ts) — the legacy config
+   emitted no line-height for these sizes, so text inherited the parent's
+   line-height (1.5 from preflight). `inherit` reproduces that exactly. */
+	--text-xs: 11.1px;
+	--text-xs--line-height: inherit;
+	--text-xs--letter-spacing: 0.005em;
+	--text-sm: 13.3px;
+	--text-sm--line-height: inherit;
+	--text-sm--letter-spacing: 0.005em;
+	--text-base: 16px;
+	--text-base--line-height: inherit;
+	--text-base--letter-spacing: 0.005em;
+	--text-xl: 19.2px;
+	--text-xl--line-height: inherit;
+	--text-xl--letter-spacing: 0.005em;
+	--text-2xl: 36.2px;
+	--text-2xl--line-height: inherit;
+	--text-2xl--letter-spacing: 0.05em;
+	--text-3xl: 51.99px;
+	--text-3xl--line-height: inherit;
+	--text-3xl--letter-spacing: 0.05em;
+	--text-4xl: 55.23px;
+	--text-4xl--line-height: inherit;
+	--text-4xl--letter-spacing: 0.05em;
+	--text-5xl: 73.96px;
+	--text-5xl--line-height: inherit;
+	--text-5xl--letter-spacing: 0.05em;
+}
+
+@theme inline {
+	/* Static font stacks (as they were declared in tailwind.config.ts) */
+	--font-montserrat: "Montserrat", sans-serif;
+	--font-morganite: "Morganite", sans-serif;
+}
 
 @font-face {
 	font-family: "Morganite";
@@ -29,150 +75,36 @@
 	font-weight: 700;
 	font-style: normal;
 }
+
 @layer base {
 	body {
 		@apply text-base text-white-100 font-montserrat scroll-smooth;
-		background-color: #05060d;
+		background-color: #060e11;
 		background-image:
-			radial-gradient(circle at 14% 18%, rgba(0, 178, 178, 0.12), transparent 44%),
-			radial-gradient(circle at 26% 76%, rgba(0, 178, 178, 0.08), transparent 50%),
-			radial-gradient(circle at 86% 14%, rgba(238, 116, 2, 0.18), transparent 46%),
-			radial-gradient(circle at 74% 62%, rgba(238, 116, 2, 0.12), transparent 56%),
-			radial-gradient(circle at 52% 34%, rgba(238, 116, 2, 0.08), transparent 52%),
-			radial-gradient(circle at 50% 82%, rgba(255, 255, 255, 0.05), transparent 52%),
-			radial-gradient(ellipse at 50% 110%, rgba(0, 0, 0, 0.7), transparent 55%);
+			linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+			radial-gradient(ellipse 80% 50% at 50% -20%, rgba(33, 147, 91, 0.15), transparent 70%),
+			radial-gradient(ellipse 60% 40% at 90% 40%, rgba(238, 116, 2, 0.06), transparent 60%),
+			radial-gradient(ellipse 60% 40% at 10% 80%, rgba(0, 128, 128, 0.08), transparent 60%);
+		background-size: 40px 40px, 40px 40px, auto, auto, auto;
 		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size:
-			170% 170%,
-			190% 190%,
-			180% 180%,
-			210% 210%,
-			200% 200%,
-			220% 220%,
-			100% 100%;
 		position: relative;
 	}
+
 	/* Section Headings */
 	h2 {
-		@apply font-morganite text-3xl font-bold leading-none sm:text-4xl md:text-5xl;
+		@apply font-montserrat text-3xl font-bold leading-none tracking-tight sm:text-4xl md:text-5xl;
 	}
 
 	h3 {
-		@apply font-morganite text-3xl font-bold leading-none md:text-4xl;
+		@apply font-montserrat text-3xl font-bold leading-none tracking-tight md:text-4xl;
 	}
 
 	h4 {
-		@apply font-morganite text-2xl font-medium leading-none md:text-3xl;
+		@apply font-montserrat text-2xl font-medium leading-none tracking-tight md:text-3xl;
 	}
 
 	.container {
 		@apply px-5 pt-10 mx-auto w-full max-w-6xl md:px-8 md:pt-14 lg:px-12;
 	}
-
-	.border-gradient-primary::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-		border-radius: 50%;
-		padding: 2px;
-		background: linear-gradient(to bottom, #008080, #EE7402);
-		-webkit-mask-composite: xor;
-		mask:
-				linear-gradient(#fff 0 0) content-box,
-				linear-gradient(#fff 0 0) border-box;
-		mask-composite: exclude;
-		pointer-events: none;
-	}
-
-	.border-gradient-secondary::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-		border-radius: 50%;
-		padding: 2px;
-		background: linear-gradient(to bottom, #EE7402, #008080);
-		-webkit-mask-composite: xor;
-		mask:
-				linear-gradient(#fff 0 0) content-box,
-				linear-gradient(#fff 0 0) border-box;
-		mask-composite: exclude;
-		pointer-events: none;
-	}
-
-	.border-gradient-primary, .border-gradient-secondary {
-		position: relative;
-		background: #131118;
-		border-radius: 50%;
-	}
 }
-
-.glow-text {
-	color: white;
-	position: relative;
-	text-shadow: 0px 0px 20px #F8F7FC;
-}
-
-.double-glow-text {
-    color: white;
-    position: relative;
-    animation: doubleGlow 1s ease-in-out 0.25s 2;
-}
-
-@keyframes doubleGlow {
-    0%, 100% {
-        text-shadow: 0 0 5px #F8F7FC;
-    }
-    50% {
-		text-shadow: 0px 0px 50px #F8F7FC;
-    }
-}
-
-.blue-blur {
-	position: absolute;
-	transform: rotate(41.861deg);
-	flex-shrink: 0;
-	background: linear-gradient(180deg, #16A2AF 0%, #171425 100%);
-	opacity: 0.5;
-	filter: blur(40.13648223876953px);
-	z-index: 0;
-}
-
-.yellow-blur {
-	position: absolute;
-	transform: rotate(41.861deg);
-	flex-shrink: 0;
-	background: linear-gradient(110deg, rgba(255, 255, 255, 0.75) -25.72%, #F2BC51 33.41%, rgba(23, 20, 37, 0.75) 124.59%);
-	opacity: 0.5;
-	filter: blur(40.13648223876953px);
-	z-index: 0;
-}
-
-.orange-blur {
-	position: absolute;
-	transform: rotate(-156.151deg);
-	flex-shrink: 0;
-	background: linear-gradient(5deg, #EE7402 3.73%, rgba(136, 66, 1, 0.50) 63.57%);
-	opacity: 0.5;
-	filter: blur(27.409912109375px);
-	z-index: 0;
-}
-
-.glow-text-orange {
-	color: #f97316;
-	animation: glow-orange 0.8s infinite alternate;
-  }
-
-  @keyframes glow-orange {
-	from {
-	  text-shadow:
-		0 0 2px rgba(249, 115, 22, 0.2),
-		0 0 4px rgba(249, 115, 22, 0.1);
-	}
-	to {
-	  text-shadow:
-		0 0 3px rgba(249, 115, 22, 0.8),
-		0 0 5px rgba(249, 115, 22, 0.6),
-		0 0 7px rgba(249, 115, 22, 0.4);
-	}
-  }

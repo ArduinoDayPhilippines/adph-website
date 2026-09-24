@@ -1,6 +1,6 @@
 # Website Frontend Documentation
 
-This is the **Arduino Day PH 2025** website repository project for the Arduino community in the Philippines.
+This is the **Arduino Day Philippines** website repository project for the Arduino community in the Philippines.
 
 ---
 
@@ -42,6 +42,11 @@ This is the **Arduino Day PH 2025** website repository project for the Arduino c
 ![Tailwind CSS](https://img.shields.io/badge/-TailwindCSS-555555?style=for-the-badge&logo=TailwindCSS)&nbsp;
 ![TypeScript](https://img.shields.io/badge/-TypeScript-555555?style=for-the-badge&logo=typescript)&nbsp;
 
+- **Next.js 16** (App Router, Turbopack) + **React 19**
+- **Tailwind CSS v4** (CSS-first config, no `tailwind.config.js`)
+- **TypeScript** (strict)
+- **three.js** for the interactive 3D hardware model
+
 ---
 
 ## 🚀 Getting Started
@@ -52,7 +57,7 @@ Ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (LTS version recommended)
 - [Git](https://git-scm.com/)
-- [Yarn](https://yarnpkg.com/) or npm
+- [pnpm](https://pnpm.io/) (v10+)
 
 1. Create a New folder where you can store the project file to be referred as the **Project Folder**
 
@@ -65,19 +70,19 @@ cd <PATH TO PROJECT FOLDER>
 3. Clone the repository, add `.` on the end to extract files to current directory.
 
 ```bash
-git clone https://github.com/ArduinoDayPH2025/arduino-ph-2025.git .
+git clone https://github.com/ArduinoDayPhilippines/adph-website.git .
 ```
 
 4. Install dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
 5. Run the development server:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -87,7 +92,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## 📁 Project Structure
 
 ```
-📦 arduino-ph-2025
+📦 adph-website
 ├── 📂 .next
 ├── 📂 node_modules
 ├── 📂 public               # Static assets
@@ -96,20 +101,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 │   │   ├── 📂 components   # Reusable UI components
 │   │   │   ├── 📂 features # Feature-specific components
 │   │   │   └── 📂 ui       # Generic, reusable UI components
-│   │   ├── 📂 context      # Global state management (React context)
-│   │   ├── 📂 lib          # Utility functions and helpers
-│   │   └── 📂 types        # TypeScript types and interfaces
+│   │   ├── 📂 data         # Static content (sponsors, FAQs)
+│   │   ├── 📂 lib          # Utility functions and hooks
 ├── .gitignore
 ├── eslint.config.mjs
 ├── next-env.d.ts
 ├── next.config.ts
 ├── package.json
-├── postcss.config.mjs
+├── postcss.config.mjs      # Tailwind CSS v4 via @tailwindcss/postcss
 ├── README.md               # Project documentation
-├── tailwind.config.ts      # Tailwind CSS configuration
 ├── tsconfig.json           # TypeScript configuration
 ├── .prettierrc.json        # Prettier configuration
-├── package-lock.json
+├── pnpm-lock.yaml
 
 ```
 
